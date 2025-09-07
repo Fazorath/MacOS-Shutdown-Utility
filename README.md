@@ -83,8 +83,6 @@ chmod +x scripts/*.sh
 
 You can also use this inside the macOS Shortcuts app for a friendly UI.
 
-![Shortcut Layout](docs/shortcut-layout.png)
-
 ![Shortcut Layout](docs/shortCut.png)
 
 
@@ -100,6 +98,8 @@ You can also use this inside the macOS Shortcuts app for a friendly UI.
 3. **Show Notification**  
    - Title: `Schedule Shutdown` (optional)  
    - Text: **Shell Script Result**
+
+![UI Layout](docs/shortcut-layout.png)
 
 ### Cancel Shutdown Shortcut
 1. **Run Shell Script**  
