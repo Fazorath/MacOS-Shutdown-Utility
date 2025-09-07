@@ -99,7 +99,7 @@ You can also use this inside the macOS Shortcuts app for a friendly UI.
    - Title: `Schedule Shutdown` (optional)  
    - Text: **Shell Script Result**
 
-![UI Layout](docs/shortcut-layout.png)
+![UI Layout](docs/shortcutSetup.png)
 
 ### Cancel Shutdown Shortcut
 1. **Run Shell Script**  
