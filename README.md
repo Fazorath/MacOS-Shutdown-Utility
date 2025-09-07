@@ -24,10 +24,10 @@ Open visudo:
 sudo visudo
 Add one of the following (replace yourusername):
 
-# General (simplest)
+## General (simplest)
 yourusername ALL=(ALL) NOPASSWD: /usr/bin/pmset
 
-# Or narrower (still works for this repo):
+## Or narrower (still works for this repo):
 yourusername ALL=(ALL) NOPASSWD: /usr/bin/pmset schedule shutdown *, /usr/bin/pmset schedule cancelall
 Test:
 sudo -n /usr/bin/pmset -g sched
@@ -35,22 +35,22 @@ sudo -n /usr/bin/pmset -g sched
 
 3. **🚀 Usage**
 Command line
-# Schedule shutdown (auto-compensates 10 minutes early)
+## Schedule shutdown (auto-compensates 10 minutes early)
 scripts/schedule-shutdown.sh "11:25 PM"
 
-# Exact shutdown (no compensation)
+## Exact shutdown (no compensation)
 scripts/schedule-shutdown.sh "23:10" --exact
 
-# Cancel all scheduled events
+## Cancel all scheduled events
 scripts/cancel-shutdown.sh
 
-# View current schedules
+## View current schedules
 pmset -g sched
 
 4. **Shortcuts app**
 You can also use this inside the macOS Shortcuts app for a friendly UI.
 
-# Schedule Shutdown Shortcut
+## Schedule Shutdown Shortcut
 Ask for Text → Prompt: Shutdown time (e.g., 11:25 PM or 23:25)
 Allow Multiple Lines: Off
 Run Shell Script
@@ -63,7 +63,7 @@ Title: Schedule Shutdown (optional)
 Text: Shell Script Result (the blue token)
 Attachment: (empty)
 
-# Cancel Shutdown Shortcut
+## Cancel Shutdown Shortcut
 Run Shell Script
 Script: /absolute/path/to/repo/scripts/cancel-shutdown.sh
 Show Notification
