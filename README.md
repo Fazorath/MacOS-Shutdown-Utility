@@ -119,7 +119,7 @@ This utility subtracts 10 minutes by default, so the machine powers off at the e
 
 Pass `--exact` if you want no compensation.
 
-![Notification Example](docs/notification.png)
+![Notification Example](docs/shutdownBanner.png)
 ---
 
 ## 🔒 Safety
