@@ -90,6 +90,13 @@ Export them as `.shortcut` files if you want to share.
 
 ---
 
+### Developer tip
+From repo root: `./scripts/schedule-shutdown.sh "11:25 PM"`
+From inside `scripts/`: `./schedule-shutdown.sh "11:25 PM"`
+If you see “permission denied”, run `chmod +x scripts/*.sh` once.
+ 
+---
+
 ## 📝 Why compensation?
 
 On macOS, `pmset schedule shutdown "<datetime>"` starts a **10-minute countdown** at that time.  
