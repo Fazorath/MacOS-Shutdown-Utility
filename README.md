@@ -17,9 +17,8 @@ A tiny utility to schedule an exact-time **shutdown** on macOS using either the 
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/<your-username>/macos-shutdown-shortcut.git
-cd macos-shutdown-shortcut
-chmod +x scripts/*.sh
+git clone https://github.com/Fazorath/MacOS-Shutdown-Utility.git
+cd MacOS-Shutdown-Utility
 ```
 
 ### 2. Allow passwordless `pmset`
@@ -51,23 +50,40 @@ sudo -n /usr/bin/pmset -g sched
 ### Command line
 ```bash
 # Schedule shutdown (auto-compensates 10 minutes early)
-scripts/schedule-shutdown.sh "11:25 PM"
+./scripts/schedule-shutdown.sh "11:25 PM"
 
 # Exact shutdown (no compensation)
-scripts/schedule-shutdown.sh "23:10" --exact
+./scripts/schedule-shutdown.sh "23:10" --exact
 
 # Cancel all scheduled events
-scripts/cancel-shutdown.sh
+./scripts/cancel-shutdown.sh
 
 # View current schedules
-pmset -g sched
+./scripts/list-schedules.sh
 ```
 
-### Shortcuts app
+### Developer tip
+- From repo root:  
+  ```bash
+  ./scripts/schedule-shutdown.sh "11:25 PM"
+  ```
+- From inside `scripts/`:  
+  ```bash
+  ./schedule-shutdown.sh "11:25 PM"
+  ```
+
+If you see “permission denied”, you cloned before the exec bit was committed; run:
+```bash
+chmod +x scripts/*.sh
+```
+
+---
+
+## 📱 Shortcuts app
 
 You can also use this inside the macOS Shortcuts app for a friendly UI.
 
-#### Schedule Shutdown Shortcut
+### Schedule Shutdown Shortcut
 1. **Ask for Text**  
    - Prompt: `Shutdown time (e.g., 11:25 PM or 23:25)`  
    - *Allow Multiple Lines*: **Off**
@@ -80,21 +96,15 @@ You can also use this inside the macOS Shortcuts app for a friendly UI.
    - Title: `Schedule Shutdown` (optional)  
    - Text: **Shell Script Result**
 
-#### Cancel Shutdown Shortcut
+### Cancel Shutdown Shortcut
 1. **Run Shell Script**  
    - Script: `/absolute/path/to/repo/scripts/cancel-shutdown.sh`
 2. **Show Notification**  
    - Text: **Shell Script Result**
 
-Export them as `.shortcut` files if you want to share.
+Export them as `.shortcut` files if you want to share.  
+➡️ **After importing a Shortcut, edit the “Run Shell Script” block and point it to the path of your local repo’s script.**
 
----
-
-### Developer tip
-From repo root: `./scripts/schedule-shutdown.sh "11:25 PM"`
-From inside `scripts/`: `./schedule-shutdown.sh "11:25 PM"`
-If you see “permission denied”, run `chmod +x scripts/*.sh` once.
- 
 ---
 
 ## 📝 Why compensation?
@@ -113,7 +123,7 @@ Pass `--exact` if you want no compensation.
 - You can remove the entry anytime via `sudo visudo`.  
 - Always test with:
   ```bash
-  scripts/cancel-shutdown.sh
+  ./scripts/cancel-shutdown.sh
   ```
 
 ---
