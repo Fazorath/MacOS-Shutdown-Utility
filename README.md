@@ -85,7 +85,6 @@ You can also use this inside the macOS Shortcuts app for a friendly UI.
 
 ![Shortcut Layout](docs/shortCut.png)
 
-
 ### Schedule Shutdown Shortcut
 1. **Ask for Text**  
    - Prompt: `Shutdown time (e.g., 11:25 PM or 23:25)`  
